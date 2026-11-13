@@ -7,7 +7,7 @@
       console.log("GPS Terverifikasi:", pos.coords.latitude, pos.coords.longitude);
     },
     function(err) {
-      document.body.innerHTML = "<div style='text-align:center; padding:50px; font-family:sans-serif;'><h2>Akses Ditolak</h2><p>Anda wajib mengaktifkan GPS dan mengizinkan akses lokasi di browser untuk mengisi absensi.</p><button onclick='location.reload()'>Coba Lagi</button></div>";
+      document.body.innerHTML = "<div style='text-align:center; padding:50px; font-family:sans-serif;'><h2>Akses Anda Ditolak</h2><p>Anda wajib mengaktifkan GPS dan mengizinkan akses lokasi untuk mengisi absensi.</p><button onclick='location.reload()'>Coba Lagi</button></div>";
     },
     { enableHighAccuracy: true }
   );
@@ -16,11 +16,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#0d6efd">
-    <title>Aplikasi Absensi</title>
+    <title>Aplikasi Absensi Long Potato</title>
     
     <!-- Manifest & Icon untuk Pintasan Chrome (PWA) -->
     <link rel="manifest" id="manifest-placeholder">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+    <link rel="apple-touch-icon" href="https://asappedasxteko99.github.io/pesan/gambar/Ayam%20Kipas.png">
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -72,14 +72,14 @@
     <div id="gps-blocker">
         <div class="icon-gps">📍</div>
         <h2>Lokasi (GPS) Wajib Aktif</h2>
-        <p id="status-msg">Untuk melanjutkan proses absensi, sistem wajib mendeteksi lokasi perangkat Anda secara akurat.</p>
+        <p id="status-msg">Untuk melanjutkan proses absensi, sistem akan mendeteksi lokasi perangkat Anda secara akurat.</p>
         <button class="btn" onclick="cekGPS()">Aktifkan & Cek Lokasi</button>
         <div id="error-detail" class="error-text"></div>
     </div>
 
     <!-- Banner Install Pintasan ke Layar Utama -->
     <div id="install-banner">
-        <span>Pasang pintasan Absensi di layar utama HP?</span>
+        <span>Pasang Aplikasi Absensi di layar utama HP?</span>
         <button id="btn-install">Install</button>
     </div>
 
@@ -98,7 +98,7 @@
             errorDetail.innerText = "";
 
             if (!navigator.geolocation) {
-                errorDetail.innerText = "Browser Anda tidak mendukung fitur GPS.";
+                errorDetail.innerText = "Browser Anda tidak mendukung fitur GPS. Pastikan Browser Anda sudah Versi Yang terbaru";
                 return;
             }
 
@@ -127,7 +127,7 @@
                             errorDetail.innerText = "Gagal: Sinyal GPS mati. Nyalakan Lokasi/GPS di pengaturan cepat HP Anda lalu coba lagi.";
                             break;
                         case error.TIMEOUT:
-                            errorDetail.innerText = "Gagal: Waktu deteksi lokasi habis. Pastikan Anda berada di area dengan sinyal baik.";
+                            errorDetail.innerText = "Gagal: saat mendektesi lokasi. Pastikan Anda berada di area dengan sinyal baik dan Pastikan sudah mensetting Lokasi";
                             break;
                         default:
                             errorDetail.innerText = "Terjadi kesalahan saat membaca GPS.";
@@ -147,14 +147,14 @@
         // 2. LOGIKA INSTALL PINTASAN KE LAYAR UTAMA (PWA)
         // Membuat file manifest.json secara dinamis di dalam satu file
         const manifestData = {
-            "name": "Absensi Online",
+            "name": "Absensi Long Potato",
             "short_name": "Absensi",
             "start_url": window.location.href,
             "display": "standalone",
             "background_color": "#ffffff",
             "theme_color": "#0d6efd",
             "icons": [{
-                "src": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+                "src": "https://asappedasxteko99.github.io/pesan/gambar/Ayam%20Kipas.png",
                 "sizes": "512x512",
                 "type": "image/png"
             }]
