@@ -1,1 +1,21 @@
 
+{
+  "id": "./",
+  "name": "Aplikasi Absensi Monster Long Potato",
+  "short_name": "Absensi Long Potato",
+  "description": "Aplikasi Absensi Karyawan Monster Long Potato",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#fc8c02",
+  "icons": [
+    {
+      "src": "https://monsterlongpotato.github.io/absensi/Logo%20Long%20Potato%20PNG%20500%20x%20500%20px.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
